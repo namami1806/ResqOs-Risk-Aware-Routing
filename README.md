@@ -14,6 +14,9 @@ This repository contains a Python prototype for **ResQOS**, a lightweight AI-bas
 - Includes a simple Tkinter GUI for selecting source and destination  
 
 ---
+## System Architecture
+
+![ResqOS Architecture](architecture.png)
 
 ## Tech Stack
 
