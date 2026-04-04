@@ -1,42 +1,55 @@
-# ResQOS – Risk-Aware Evacuation Routing (T. Nagar, Chennai)
+# ResQOS – T. Nagar Risk-Aware Routing
 
-This repository presents a Python-based prototype of ResQOS, an AI-driven disaster evacuation system designed to compute risk-aware routes in urban environments like T. Nagar, Chennai. The system integrates real-world map data with multi-hazard inputs to generate safer evacuation paths.
+This repository contains a Python prototype for **ResQOS**, a lightweight AI-based system that computes risk-aware evacuation routes in T. Nagar, Chennai.
 
-⸻
+---
 
-Key Features
-	•	Extracts drivable road networks from OpenStreetMap using OSMnx
-	•	Integrates multi-hazard factors (water level, crowd density, rainfall, light conditions)
-	•	Computes fuzzy risk scores for each road segment and derives effective routing cost
-	•	Implements risk-aware shortest path routing using NetworkX
-	•	Visualizes optimal evacuation paths (static and animated) using Matplotlib
-	•	Provides a simple GUI (Tkinter) for interactive source-target selection
+## Features
 
-⸻
+- Extracts drivable road network from OpenStreetMap using OSMnx  
+- Integrates multi-hazard data (water level, crowd density, rainfall, light)  
+- Computes risk scores for each road segment using a fuzzy logic approach  
+- Performs risk-aware shortest path routing using NetworkX  
+- Visualises safest routes using Matplotlib (static and animated)  
+- Includes a simple Tkinter GUI for selecting source and destination  
 
-Team Contributions
-	•	Prashanta Sarmah Bordoloi
-	•	Developed core routing pipeline using OSMnx and NetworkX
-	•	Implemented fuzzy risk scoring and cost computation
-	•	Built visualization modules and GUI interface
-	•	Namami Chouhan
-	•	Implemented and analyzed ML/DL models (Autoencoders, Isolation Forest, GNNs)
-	•	Performed comparative evaluation using graphical analysis
-	•	Contributed to system design and data processing workflow (ongoing)
+---
+## System Architecture
 
-⸻
+![ResqOS Architecture](architecture.png)
 
-Tech Stack
-	•	Python
-	•	OSMnx, NetworkX, pandas, NumPy
-	•	Matplotlib (visualization & animation)
-	•	Tkinter (GUI)
-	•	Machine Learning / Deep Learning models
+## Tech Stack
 
-⸻
+- Python  
+- OSMnx, NetworkX  
+- pandas, NumPy  
+- Matplotlib (FuncAnimation)  
+- Tkinter  
 
-How to Run (Outline)
-	1.	Run get_tnagar_graph.py to download and store the road network
-	2.	Run build_edges_with_risk.py to compute risk scores and costs
-	3.	Run run_safe_path.py for routing
-	4.	Run animate_safe_path.py for interactive visualization
+## Edge Sensing Prototype
+
+![Edge Sensing Prototype](iot_sensing_module.png)
+
+Prototype setup demonstrating how real-time environmental inputs (e.g., obstacles, proximity, hazard signals) can be captured at the edge and fed into the routing system for dynamic risk estimation.
+---
+
+## How to Run
+
+1. Run `get_tnagar_graph.py`  
+   → Downloads and saves the T. Nagar road network  
+
+2. Run `build_edges_with_risk.py`  
+   → Computes risk scores and effective edge costs  
+
+3. Run `run_safe_path.py`  
+   → Generates a sample safest route  
+
+4. Run `animate_safe_path.py`  
+   → Launches GUI to select nodes and visualise route  
+
+---
+
+## Notes
+
+- Current implementation uses fuzzy logic for risk scoring  
+- Deep Learning-based risk modeling is under development and integration  
